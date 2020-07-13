@@ -42,8 +42,13 @@
 						"tile-y-spacing": 0
 					},
 					"world": {
+<<<<<<< HEAD
 						"x": 32,
 						"y": -256,
+=======
+						"x": -160,
+						"y": 0,
+>>>>>>> remotes/origin/master
 						"width": 9376,
 						"height": 960,
 						"originX": 0,
