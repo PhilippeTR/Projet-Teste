@@ -42,7 +42,7 @@
 						"tile-y-spacing": 0
 					},
 					"world": {
-						"x": 32,
+						"x": -160,
 						"y": 0,
 						"width": 9376,
 						"height": 960,
