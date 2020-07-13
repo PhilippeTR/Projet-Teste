@@ -1,0 +1,340 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 20402,
+	"name": "Yigit",
+	"runtime": "c3",
+	"useWorker": "worker",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Tilemap",
+			"name": "Tuilage",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Clavier",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Texte",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Button",
+			"name": "Bouton",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Navigateur",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Touch",
+			"name": "Toucher",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solide",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Platform",
+			"name": "Plate-forme",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Bullet",
+			"name": "Projectile",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Pin",
+			"name": "Epingle",
+			"author": "Scirra",
+			"version": "r204.2",
+			"bundled": false
+		}
+	],
+	"uniqueId": "kp5b0z1lzp7",
+	"objectTypes": {
+		"items": [
+			"Tilemap",
+			"Bloc",
+			"Joueur",
+			"Keyboard",
+			"Balle",
+			"Score",
+			"Boss",
+			"Titre",
+			"Jouer",
+			"VieBack",
+			"VieValue",
+			"Niveau",
+			"Quitter",
+			"CJ",
+			"MessageMort",
+			"NRM",
+			"jauge",
+			"Piques",
+			"Baton",
+			"Browser",
+			"Text",
+			"Fond",
+			"Touch",
+			"Audio",
+			"Texte",
+			"Trou",
+			"block2"
+		],
+		"subfolders": []
+	},
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"Boss",
+				"VieBack",
+				"VieValue"
+			],
+			"selectMode": "all"
+		}
+	],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Menu",
+			"Niveau"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"Base",
+			"Menu"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [
+				{
+					"name": "Coin01.mp3",
+					"type": "audio/mpeg",
+					"sid": 347458354091879
+				},
+				{
+					"name": "FX01.mp3",
+					"type": "audio/mpeg",
+					"sid": 847964838275930
+				},
+				{
+					"name": "Rise01.mp3",
+					"type": "audio/mpeg",
+					"sid": 937987650312863
+				}
+			],
+			"subfolders": []
+		},
+		"music": {
+			"items": [
+				{
+					"name": "Grassy World (8-Bit_Orchestral Overture) - Main Title Theme.mp3",
+					"type": "audio/mpeg",
+					"sid": 625826694440113
+				}
+			],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [
+				{
+					"name": "PressStart2P-Regular.ttf",
+					"type": "application/font-sfnt",
+					"sid": 337900781730716
+				}
+			],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 361956406015260,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 343317858386561,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 429716369149360,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 396907992188406,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 534939517322789,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 707596533258721,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 191669454981992,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"author": "Yigit",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "Patate",
+		"pixelRounding": true,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-integer-scale",
+		"fullscreenQuality": "low",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useHighDpi": true,
+		"orientations": "landscape",
+		"enableWebGL": true,
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"compositingMode": "standard",
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"clearBackground": true,
+		"enhancedAccelerationPrecision": true
+	},
+	"viewportWidth": 320,
+	"viewportHeight": 256,
+	"firstLayout": null
+}

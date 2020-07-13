@@ -1,0 +1,343 @@
+{
+	"name": "Menu",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 523379996941685
+				},
+				{
+					"id": "is-boolean-instance-variable-set",
+					"objectClass": "Tilemap",
+					"sid": 930863622330150,
+					"parameters": {
+						"instance-variable": "Infini"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Tilemap",
+					"sid": 281293894305991,
+					"parameters": {
+						"x": "Tilemap.X-(dt*60*Vitesse)"
+					}
+				}
+			],
+			"sid": 362185523067903
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-x",
+					"objectClass": "Tilemap",
+					"sid": 187937963762829,
+					"parameters": {
+						"comparison": 3,
+						"x-co-ordinate": "-320"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 487529657723864,
+					"parameters": {
+						"variable": "BossCombat"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "Tilemap",
+					"sid": 365335840790554,
+					"parameters": {
+						"x": "0"
+					}
+				}
+			],
+			"sid": 317069181681133
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 296030299206727
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 144838466703844
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 225522217081174,
+					"parameters": {
+						"audio-file": "Grassy World (8-Bit_Orchestral Overture) - Main Title Theme",
+						"loop": "looping",
+						"volume": "-10",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Jouer",
+					"sid": 881398153008011,
+					"parameters": {
+						"property-name": "\"font-family\"",
+						"value": "\"PressStart2P-Regular\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Jouer",
+					"sid": 440434752928006,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"20px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Quitter",
+					"sid": 639430814186561,
+					"parameters": {
+						"property-name": "\"font-family\"",
+						"value": "\"PressStart2P-Regular\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "CJ",
+					"sid": 495650847654767,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"15px\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "CJ",
+					"sid": 224244657509436,
+					"parameters": {
+						"property-name": "\"font-family\"",
+						"value": "\"PressStart2P-Regular\""
+					}
+				},
+				{
+					"id": "set-css-style",
+					"objectClass": "Quitter",
+					"sid": 287723437502180,
+					"parameters": {
+						"property-name": "\"font-size\"",
+						"value": "\"20px\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 681468132254968,
+					"parameters": {
+						"variable": "Niveau",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 850362164858009,
+					"parameters": {
+						"variable": "DistanceMax",
+						"value": "-1504"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 545871317791985,
+					"parameters": {
+						"variable": "Score",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 229884272600466,
+					"parameters": {
+						"variable": "VieDuBoss",
+						"value": "3"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 363414599667947,
+					"parameters": {
+						"variable": "ScorePourBoss",
+						"value": "10"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 669266956163598,
+					"parameters": {
+						"variable": "Vitesse",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 999890106979811,
+					"parameters": {
+						"variable": "SecondChance",
+						"value": "true"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 582394543132035,
+					"parameters": {
+						"variable": "BossCombat",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 566512016744189,
+					"parameters": {
+						"layer": "1",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 300565589166037,
+					"parameters": {
+						"layer": "2",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 667426300280676
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Jouer",
+					"sid": 496654649153357
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 578473070203919,
+					"parameters": {
+						"layout": "Niveau"
+					}
+				}
+			],
+			"sid": 570601075501731
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "Quitter",
+					"sid": 216835721125899
+				}
+			],
+			"actions": [
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 125751032907874
+				}
+			],
+			"sid": 653847132775139
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "CJ",
+					"sid": 326502966150793
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 643577070932538,
+					"parameters": {
+						"layer": "1",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 224325789382597,
+					"parameters": {
+						"layer": "2",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 205399959747101
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 389056491707245
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 535555564356942,
+					"parameters": {
+						"layer": "1",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 882638051298200,
+					"parameters": {
+						"layer": "2",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 414880642218280
+		}
+	],
+	"sid": 548310009648848
+}

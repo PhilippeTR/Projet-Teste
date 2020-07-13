@@ -1,0 +1,2277 @@
+{
+	"name": "Base",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Vitesse",
+			"type": "number",
+			"initialValue": "2",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 917193866243704
+		},
+		{
+			"eventType": "variable",
+			"name": "Score",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 903927033838526
+		},
+		{
+			"eventType": "variable",
+			"name": "BossCombat",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 227331361020734
+		},
+		{
+			"eventType": "variable",
+			"name": "VieDuBoss",
+			"type": "number",
+			"initialValue": "3",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 111957790935584
+		},
+		{
+			"eventType": "variable",
+			"name": "Niveau",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 421643877894570
+		},
+		{
+			"eventType": "variable",
+			"name": "DébutP",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 912318844249159
+		},
+		{
+			"eventType": "variable",
+			"name": "ScorePourBoss",
+			"type": "number",
+			"initialValue": "10",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 284370617832989
+		},
+		{
+			"eventType": "variable",
+			"name": "SecondChance",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 921882902464333
+		},
+		{
+			"eventType": "variable",
+			"name": "DistanceMax",
+			"type": "number",
+			"initialValue": "-8512",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 596663295136402
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Gestion de la carte",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 526282829098749
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 335782538691866,
+							"parameters": {
+								"layer": "2",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "NRM",
+							"sid": 377420794422787,
+							"parameters": {
+								"property-name": "\"font-family\"",
+								"value": "\"PressStart2P-Regular\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 381258886806529,
+							"parameters": {
+								"audio-file": "Rise01",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "NRM",
+							"sid": 499240815102808,
+							"parameters": {
+								"property-name": "\"font-size\"",
+								"value": "\"20px\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "NRM",
+							"sid": 725265078139904,
+							"parameters": {
+								"property-name": "\"background\"",
+								"value": "\"#EEEEEE\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "NRM",
+							"sid": 293587007964968,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"5px inset #BEC6CC\""
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Piques",
+							"sid": 946070007411314,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Tilemap",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Trou",
+							"sid": 718510509805901,
+							"behaviorType": "Epingle",
+							"parameters": {
+								"pin-to": "Tilemap",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "Baton",
+							"sid": 783203558683637,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Tilemap",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 703022458663539,
+							"parameters": {
+								"text": "\"Score : \"&Score"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 291585376468895,
+							"parameters": {
+								"variable": "DébutP",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "jauge",
+							"sid": 405046615337450,
+							"parameters": {
+								"x": "Joueur.X-20",
+								"y": "Joueur.Y"
+							}
+						},
+						{
+							"id": "pin-to-object-properties",
+							"objectClass": "jauge",
+							"sid": 174915259278489,
+							"behaviorType": "Pin",
+							"parameters": {
+								"pin-to": "Joueur",
+								"x": true,
+								"y": true,
+								"angle": true,
+								"width-type": "no",
+								"height-type": "no",
+								"z": false
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Boss",
+							"sid": 141437290999850,
+							"parameters": {
+								"instance-variable": "PointDeVie",
+								"value": "VieDuBoss"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Niveau",
+							"sid": 234898939745495,
+							"parameters": {
+								"text": "\"Niveau : \"&Niveau"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 588990260900954,
+							"parameters": {
+								"seconds": "2"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "Niveau",
+							"sid": 481642872027465,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 918959308470701,
+							"parameters": {
+								"text": "\"Score : \"&Score"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 108558500930137,
+							"parameters": {
+								"variable": "DébutP",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 415237987820011
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 700009422843808
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 780581545788378,
+							"parameters": {
+								"instance-variable": "Infini"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 671551082411138,
+							"parameters": {
+								"instance-variable": "Mort"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Tilemap",
+							"sid": 934619104908753,
+							"parameters": {
+								"x": "Tilemap.X-(dt*60*Vitesse)"
+							}
+						}
+					],
+					"sid": 404283565434109
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Tilemap",
+							"sid": 770890372866026,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "DistanceMax"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 623419580697447,
+							"parameters": {
+								"variable": "BossCombat"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "Tilemap",
+							"sid": 661865643156555,
+							"parameters": {
+								"x": "0"
+							}
+						}
+					],
+					"sid": 495102343000933,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 766022507794946,
+									"parameters": {
+										"object": "Piques"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Piques",
+									"sid": 643381028189930,
+									"parameters": {
+										"instance-variable": "DonnerPoint",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 727298065420034
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-released",
+							"objectClass": "Keyboard",
+							"sid": 212157686203646,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 491100715160995,
+							"parameters": {
+								"variable": "BossCombat"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-animation-frame",
+							"objectClass": "jauge",
+							"sid": 153029427518893,
+							"parameters": {
+								"comparison": 0,
+								"number": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-animation",
+							"objectClass": "jauge",
+							"sid": 707161008304227
+						},
+						{
+							"id": "start-animation",
+							"objectClass": "jauge",
+							"sid": 869283116464505,
+							"parameters": {
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Joueur",
+							"sid": 298448515598729,
+							"parameters": {
+								"animation": "\"Attaque\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 299022499628755
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-animation-finished",
+							"objectClass": "Joueur",
+							"sid": 827587527591272
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 440991920733004,
+							"parameters": {
+								"instance-variable": "Infini"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 897139343269709,
+							"parameters": {
+								"instance-variable": "Mort"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Joueur",
+							"sid": 926563831055030,
+							"parameters": {
+								"animation": "\"Cours\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 248543562207814
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 448818669548947,
+							"parameters": {
+								"variable": "Score",
+								"comparison": 5,
+								"value": "ScorePourBoss"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 454002850728741,
+							"parameters": {
+								"variable": "BossCombat",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 219465074552628
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Tilemap",
+							"sid": 209260515938732,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "DistanceMax"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 238005185521446,
+							"parameters": {
+								"variable": "BossCombat"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Tilemap",
+							"sid": 217840574663584,
+							"parameters": {
+								"instance-variable": "Infini",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 153582909007133
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 708591162497272,
+							"parameters": {
+								"instance-variable": "Infini"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 501115589870782,
+							"parameters": {
+								"instance-variable": "Mort"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 229134466204987,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-released",
+									"objectClass": "Keyboard",
+									"sid": 824729167754597,
+									"parameters": {
+										"key": 32
+									}
+								},
+								{
+									"id": "compare-animation-frame",
+									"objectClass": "jauge",
+									"sid": 920968034039402,
+									"parameters": {
+										"comparison": 0,
+										"number": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Joueur",
+									"sid": 508963191777388,
+									"parameters": {
+										"instance-variable": "Attaque",
+										"value": "true"
+									}
+								},
+								{
+									"id": "stop-animation",
+									"objectClass": "jauge",
+									"sid": 706813458206971
+								},
+								{
+									"id": "start-animation",
+									"objectClass": "jauge",
+									"sid": 227768631701950,
+									"parameters": {
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "Joueur",
+									"sid": 516812872632452,
+									"parameters": {
+										"animation": "\"Attaque\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 808879579329045
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-animation-finished",
+									"objectClass": "Joueur",
+									"sid": 144014801926632
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "Joueur",
+									"sid": 828001436198396,
+									"parameters": {
+										"instance-variable": "Attaque",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 855511927418239
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Joueur",
+									"sid": 344032239388238,
+									"parameters": {
+										"instance-variable": "Attaque"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [],
+							"sid": 388785191627416,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-jumping",
+											"objectClass": "Joueur",
+											"sid": 780461898763070,
+											"behaviorType": "Platform"
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Joueur",
+											"sid": 336017147753288,
+											"parameters": {
+												"animation": "\"Sauté\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 173721793864791
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-moving",
+											"objectClass": "Joueur",
+											"sid": 535222258982804,
+											"behaviorType": "Platform"
+										},
+										{
+											"id": "is-falling",
+											"objectClass": "Joueur",
+											"sid": 666729862174864,
+											"behaviorType": "Platform",
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Joueur",
+											"sid": 823568230323957,
+											"parameters": {
+												"animation": "\"Cours\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 297023399684024
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 472658230344932
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "Joueur",
+											"sid": 101385115647891,
+											"parameters": {
+												"animation": "\"Neutre\"",
+												"from": "beginning"
+											}
+										}
+									],
+									"sid": 401305203312120
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "NRM",
+							"sid": 239910416774280
+						}
+					],
+					"actions": [],
+					"sid": 794210473864421,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 283907238877960,
+									"parameters": {
+										"variable": "SecondChance"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 378455904482584,
+									"parameters": {
+										"variable": "SecondChance",
+										"value": "false"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 711155891816025
+								}
+							],
+							"sid": 684066816969736
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 573017166018238
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 199642664203872,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 346191027298820
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 997345155421715,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 390416888167286,
+							"parameters": {
+								"variable": "Vitesse",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 491369408333883
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 371424542233742,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 579004276699215,
+							"parameters": {
+								"variable": "DistanceMax",
+								"value": "-3680"
+							}
+						}
+					],
+					"sid": 765179473070757
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 819033350372834,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 999908257047989,
+							"parameters": {
+								"variable": "Vitesse",
+								"value": "4"
+							}
+						}
+					],
+					"sid": 988571713097638
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 149207256487735,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 512177111170221,
+							"parameters": {
+								"variable": "DistanceMax",
+								"value": "-5216"
+							}
+						}
+					],
+					"sid": 902802088678885
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 595668415446107,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 761746301525985,
+							"parameters": {
+								"variable": "Vitesse",
+								"value": "5"
+							}
+						}
+					],
+					"sid": 727465369354476
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 239642108658876,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 956432299810764,
+							"parameters": {
+								"variable": "DistanceMax",
+								"value": "-7072"
+							}
+						}
+					],
+					"sid": 778823042569406
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 849736187783305,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "8"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 631174986100540,
+							"parameters": {
+								"variable": "Vitesse",
+								"value": "6"
+							}
+						}
+					],
+					"sid": 616506467403874
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 392859838280697,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "9"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 238906493972989,
+							"parameters": {
+								"variable": "DistanceMax",
+								"value": "-8512"
+							}
+						}
+					],
+					"sid": 862012729231648
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 926949136909669,
+							"parameters": {
+								"variable": "Niveau",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 962697170007063,
+							"parameters": {
+								"variable": "Vitesse",
+								"value": "7"
+							}
+						}
+					],
+					"sid": 971093781673337
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 623816263235117,
+							"parameters": {
+								"object": "Bloc"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 255130626438162,
+							"parameters": {
+								"instance-variable": "Mort"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 575286998160100,
+							"parameters": {
+								"variable": "BossCombat"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 483283908320811,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Bloc",
+									"sid": 881786579997033,
+									"parameters": {
+										"object": "Trou"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloc",
+									"sid": 274074608510656,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 635493176143652
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "Bloc",
+									"sid": 562126628773441,
+									"parameters": {
+										"object": "Trou"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloc",
+									"sid": 674806735380587,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 730480997921623
+						}
+					]
+				}
+			],
+			"sid": 985495783733872
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TireBalles",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "PosY",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 870397401624172
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 678648230602736,
+							"parameters": {
+								"interval-seconds": "3"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 668989273675804,
+							"parameters": {
+								"variable": "BossCombat"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 612798331644346,
+							"parameters": {
+								"variable": "PosY",
+								"value": "choose(96, 128, 224, 192, 160)"
+							}
+						}
+					],
+					"sid": 527286808082759,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 914304549808043,
+									"parameters": {
+										"object-to-create": "Balle",
+										"layer": "0",
+										"x": "416",
+										"y": "PosY"
+									}
+								},
+								{
+									"id": "set-speed",
+									"objectClass": "Balle",
+									"sid": 186686629643787,
+									"behaviorType": "Bullet",
+									"parameters": {
+										"speed": "Balle.Bullet.Speed*Vitesse"
+									}
+								}
+							],
+							"sid": 469119070383522,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Balle",
+							"sid": 598451746626850,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "-64"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Balle",
+							"sid": 336473899693274
+						}
+					],
+					"sid": 545203299594262
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Piques",
+							"sid": 369171191193486,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "-64"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Piques",
+							"sid": 350998341962379,
+							"parameters": {
+								"instance-variable": "DonnerPoint"
+							}
+						},
+						{
+							"id": "compare-x",
+							"objectClass": "Tilemap",
+							"sid": 251299608858235,
+							"parameters": {
+								"comparison": 1,
+								"x-co-ordinate": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 691969184111552,
+							"parameters": {
+								"variable": "Score",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Score",
+							"sid": 287067486318897,
+							"parameters": {
+								"text": "\"Score : \"&Score"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Piques",
+							"sid": 602717451761551,
+							"parameters": {
+								"instance-variable": "DonnerPoint",
+								"value": "false"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 169175308582168,
+							"parameters": {
+								"audio-file": "Coin01",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 810190316980277
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Balle",
+							"sid": 245434947374147,
+							"parameters": {
+								"object": "Joueur"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Joueur",
+							"sid": 786368827134438,
+							"parameters": {
+								"animation": "\"Attaque\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Balle",
+							"sid": 421053939732183
+						}
+					],
+					"sid": 445622065357577
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Balle",
+							"sid": 162523217820152,
+							"parameters": {
+								"object": "Joueur"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Joueur",
+							"sid": 412934852793007,
+							"parameters": {
+								"animation": "\"Attaque\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Balle",
+							"sid": 284487233119851
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Tilemap",
+							"sid": 361109308237143,
+							"parameters": {
+								"instance-variable": "Mort",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Joueur",
+							"sid": 886726167650113,
+							"parameters": {
+								"animation": "\"Blessé\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 924047911116453,
+							"parameters": {
+								"audio-file": "FX01",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bloc",
+							"sid": 239279499697546
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Boss",
+							"sid": 960748981239490,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 131826842074393,
+							"parameters": {
+								"layer": "2",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 728703088205093,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 657809666067662,
+									"parameters": {
+										"variable": "SecondChance"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "NRM",
+									"sid": 448855952647148,
+									"parameters": {
+										"text": "\"Recommencer\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "MessageMort",
+									"sid": 422964073298620,
+									"parameters": {
+										"text": "\"Vous êtes mort, mais vous avez un second souffle.\""
+									}
+								}
+							],
+							"sid": 334759361452374
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 582684957158312
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "NRM",
+									"sid": 843005766406425,
+									"parameters": {
+										"text": "\"Retour au menu\""
+									}
+								}
+							],
+							"sid": 202250194121264
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "Piques",
+							"sid": 107452988207265,
+							"parameters": {
+								"object": "Joueur"
+							}
+						},
+						{
+							"id": "is-animation-playing",
+							"objectClass": "Joueur",
+							"sid": 469223910654670,
+							"parameters": {
+								"animation": "\"Attaque\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "Balle",
+							"sid": 335691965448575
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Tilemap",
+							"sid": 801993876842937,
+							"parameters": {
+								"instance-variable": "Mort",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Joueur",
+							"sid": 376813718243427,
+							"parameters": {
+								"animation": "\"Blessé\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 204124211776417,
+							"parameters": {
+								"audio-file": "FX01",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "Bloc",
+							"sid": 936226186069549
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Baton",
+							"sid": 790061726674195,
+							"behaviorType": "Solid",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "Boss",
+							"sid": 554676300674456,
+							"behaviorType": "Platform",
+							"parameters": {
+								"state": "disabled"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 180925148285432,
+							"parameters": {
+								"layer": "2",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 454346733589559,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 955397531844054,
+									"parameters": {
+										"variable": "SecondChance"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "NRM",
+									"sid": 734140204376032,
+									"parameters": {
+										"text": "\"Recommencer\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "MessageMort",
+									"sid": 179027510393814,
+									"parameters": {
+										"text": "\"Vous êtes mort, mais vous avez un second souffle.\""
+									}
+								}
+							],
+							"sid": 276331449964144
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 825574060480655
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "NRM",
+									"sid": 221005885578275,
+									"parameters": {
+										"text": "\"Retour au menu\""
+									}
+								}
+							],
+							"sid": 179317392636683
+						}
+					]
+				}
+			],
+			"sid": 580027533642955
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Boss",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 912706713493915,
+							"parameters": {
+								"instance-variable": "Infini"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Tilemap",
+							"sid": 321847362107464,
+							"parameters": {
+								"instance-variable": "Fin"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 791813718351431,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Bloc",
+									"sid": 383891046265344,
+									"parameters": {
+										"instance-variable": "Désactiver"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloc",
+									"sid": 567339151702712,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								}
+							],
+							"sid": 952353489055948
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Boss",
+									"sid": 255601831762143,
+									"parameters": {
+										"comparison": 5,
+										"x-co-ordinate": "280"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "Boss",
+									"sid": 657508757712740,
+									"behaviorType": "Platform",
+									"parameters": {
+										"control": "left"
+									}
+								},
+								{
+									"id": "set-mirrored",
+									"objectClass": "Boss",
+									"sid": 364352617412605,
+									"parameters": {
+										"state": "mirrored"
+									}
+								}
+							],
+							"sid": 117354833937767
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "Boss",
+									"sid": 348241007750212,
+									"parameters": {
+										"comparison": 3,
+										"x-co-ordinate": "280"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloc",
+									"sid": 684379799127572,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "enabled"
+									}
+								}
+							],
+							"sid": 614596021713200,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 909583968892784,
+											"parameters": {
+												"interval-seconds": "2"
+											}
+										},
+										{
+											"id": "is-boolean-instance-variable-set",
+											"objectClass": "Boss",
+											"sid": 315437319469248,
+											"parameters": {
+												"instance-variable": "Touché"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Boss",
+											"sid": 507406481726626,
+											"parameters": {
+												"instance-variable": "PointDeVie",
+												"comparison": 0,
+												"value": "0"
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-instvar",
+											"objectClass": "Boss",
+											"sid": 751382906558943,
+											"parameters": {
+												"instance-variable": "Attaque",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "Boss",
+											"sid": 835843039400368,
+											"parameters": {
+												"animation": "\"Attaque\"",
+												"from": "beginning"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Boss",
+											"sid": 124768234121553,
+											"parameters": {
+												"object": "Balle",
+												"layer": "0",
+												"image-point": "1"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Balle",
+											"sid": 750793574869676,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Balle.Bullet.Speed*Vitesse"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Balle",
+											"sid": 620028266328501,
+											"parameters": {
+												"angle": "180"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 790457026454532,
+											"parameters": {
+												"seconds": "1"
+											}
+										},
+										{
+											"id": "simulate-control",
+											"objectClass": "Boss",
+											"sid": 314733991595624,
+											"behaviorType": "Platform",
+											"parameters": {
+												"control": "jump"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 397700171065321,
+											"parameters": {
+												"seconds": "0.4"
+											}
+										},
+										{
+											"id": "spawn-another-object",
+											"objectClass": "Boss",
+											"sid": 149802611411316,
+											"parameters": {
+												"object": "Balle",
+												"layer": "0",
+												"image-point": "1"
+											}
+										},
+										{
+											"id": "set-speed",
+											"objectClass": "Balle",
+											"sid": 154136370453720,
+											"behaviorType": "Bullet",
+											"parameters": {
+												"speed": "Balle.Bullet.Speed*Vitesse"
+											}
+										},
+										{
+											"id": "set-angle",
+											"objectClass": "Balle",
+											"sid": 453436815571081,
+											"parameters": {
+												"angle": "180"
+											}
+										}
+									],
+									"sid": 243017522442598
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Boss",
+							"sid": 527830622341025,
+							"parameters": {
+								"instance-variable": "Attaque"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Boss",
+							"sid": 748500800836342,
+							"parameters": {
+								"instance-variable": "Touché"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 418385492452978,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-moving",
+									"objectClass": "Boss",
+									"sid": 566350110759962,
+									"behaviorType": "Platform"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Boss",
+									"sid": 744793874705381,
+									"parameters": {
+										"animation": "\"Cours\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 229815263622902
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 794969275982230
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "Boss",
+									"sid": 314407620911972,
+									"parameters": {
+										"animation": "\"Neutre\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 921055576972301
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-animation-finished",
+							"objectClass": "Boss",
+							"sid": 921783635887822,
+							"parameters": {
+								"animation": "\"Attaque\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Boss",
+							"sid": 665690872190545,
+							"parameters": {
+								"instance-variable": "Attaque",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 547993972964642
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "Joueur",
+							"sid": 933817593387353,
+							"parameters": {
+								"object": "Boss"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Joueur",
+							"sid": 205618655269542,
+							"parameters": {
+								"instance-variable": "Attaque"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "Boss",
+							"sid": 323020074290401,
+							"parameters": {
+								"instance-variable": "Touché"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "VieValue",
+							"sid": 142893186432279,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "VieBack",
+							"sid": 860795126983763,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Boss",
+							"sid": 602223755640329,
+							"parameters": {
+								"instance-variable": "Touché",
+								"value": "true"
+							}
+						},
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "Boss",
+							"sid": 282258019696299,
+							"parameters": {
+								"instance-variable": "PointDeVie",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-width",
+							"objectClass": "VieValue",
+							"sid": 831986853750051,
+							"parameters": {
+								"width": "Boss.PointDeVie*96/VieDuBoss"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "Boss",
+							"sid": 646654034000238,
+							"parameters": {
+								"animation": "\"Blessure\"",
+								"from": "beginning"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Joueur",
+							"sid": 546801501973034,
+							"parameters": {
+								"instance-variable": "Attaque",
+								"value": "false"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 905628885012197,
+							"parameters": {
+								"audio-file": "FX01",
+								"loop": "not-looping",
+								"volume": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 413728157261326,
+							"parameters": {
+								"seconds": "1.5"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Boss",
+							"sid": 956614096056565,
+							"parameters": {
+								"instance-variable": "Touché",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 466444414963756
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 641603293085982
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "VieBack",
+							"sid": 471351683479353,
+							"parameters": {
+								"x": "Boss.X-30",
+								"y": "Boss.Y-60"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "VieValue",
+							"sid": 439256315812389,
+							"parameters": {
+								"x": "VieBack.BBoxLeft",
+								"y": "VieBack.Y+8"
+							}
+						}
+					],
+					"sid": 379097627883906
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Boss",
+							"sid": 456337569533589,
+							"parameters": {
+								"instance-variable": "PointDeVie",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 454117890658343,
+							"parameters": {
+								"seconds": "3"
+							}
+						},
+						{
+							"id": "simulate-control",
+							"objectClass": "Boss",
+							"sid": 991796777924328,
+							"behaviorType": "Platform",
+							"parameters": {
+								"control": "right"
+							}
+						},
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "Tilemap",
+							"sid": 719467673773937,
+							"parameters": {
+								"instance-variable": "Fin",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 934967964334963,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-boolean-instance-variable-set",
+									"objectClass": "Bloc",
+									"sid": 500627787914760,
+									"parameters": {
+										"instance-variable": "Désactiver"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-enabled",
+									"objectClass": "Bloc",
+									"sid": 995466637238634,
+									"behaviorType": "Solid",
+									"parameters": {
+										"state": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 860987428419953,
+									"parameters": {
+										"seconds": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 592903804210551,
+									"parameters": {
+										"variable": "Niveau",
+										"value": "1"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 930630907552872,
+									"parameters": {
+										"variable": "VieDuBoss",
+										"value": "2"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 600979915729293,
+									"parameters": {
+										"variable": "ScorePourBoss",
+										"value": "20"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 360226009127449,
+									"parameters": {
+										"variable": "BossCombat",
+										"value": "false"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 551471120616720,
+									"parameters": {
+										"layout": "Niveau"
+									}
+								}
+							],
+							"sid": 182880496480177
+						}
+					]
+				}
+			],
+			"sid": 185603443640587
+		}
+	],
+	"sid": 762058795612658
+}
